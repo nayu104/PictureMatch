@@ -2,19 +2,13 @@ import 'package:flutter/material.dart';
 
 /// アートワークカードウィジェット
 class ArtworkCard extends StatelessWidget {
-  final String imageEmoji;
-  final String creatorName;
-  final String creatorAvatar;
-  final int likeCount;
-  final List<String> tags;
+  final String imageUrl; // 画像のURL
+  final int likeCount; // いいね数
 
   const ArtworkCard({
     super.key,
-    required this.imageEmoji,
-    required this.creatorName,
-    required this.creatorAvatar,
+    required this.imageUrl,
     required this.likeCount,
-    required this.tags,
   });
 
   @override
@@ -37,13 +31,13 @@ class ArtworkCard extends StatelessWidget {
                 top: Radius.circular(16),
               ),
             ),
-            child: Center(
-              child: Text(
-                imageEmoji,
-                style: const TextStyle(fontSize: 80),
+            child: Image.network(
+                imageUrl,
+                width: 300,
+                height: 400,
+                fit: BoxFit.cover,
               ),
             ),
-          ),
           
           Padding(
             padding: const EdgeInsets.all(12.0),
@@ -53,20 +47,6 @@ class ArtworkCard extends StatelessWidget {
                 // クリエイター情報
                 Row(
                   children: [
-                    Text(
-                      creatorAvatar,
-                      style: const TextStyle(fontSize: 32),
-                    ),
-                    const SizedBox(width: 8),
-                    Expanded(
-                      child: Text(
-                        creatorName,
-                        style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
                     // いいねボタン
                     Row(
                       children: [
@@ -87,32 +67,7 @@ class ArtworkCard extends StatelessWidget {
                     ),
                   ],
                 ),
-                
                 const SizedBox(height: 8),
-                
-                // タグ
-                Wrap(
-                  spacing: 8,
-                  runSpacing: 4,
-                  children: tags.map((tag) {
-                    return Container(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 12,
-                        vertical: 6,
-                      ),
-                      decoration: BoxDecoration(
-                        color: Colors.grey[200],
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                      child: Text(
-                        tag,
-                        style: const TextStyle(
-                          fontSize: 12,
-                        ),
-                      ),
-                    );
-                  }).toList(),
-                ),
               ],
             ),
           ),
@@ -121,4 +76,3 @@ class ArtworkCard extends StatelessWidget {
     );
   }
 }
-

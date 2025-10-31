@@ -3,21 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 import '../widgets/artwork_card.dart';
 
 /// ホーム画面
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
-
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  int _selectedIndex = 0;
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -77,89 +64,49 @@ class _HomeScreenState extends State<HomeScreen> {
               
               // 作品グリッド
               GridView.count(
+                // 親ウィジェットのサイズに合わせてサイズを調整（SingleChildScrollView内で使用する際に必要）
                 shrinkWrap: true,
+                // スクロールを無効化（親のSingleChildScrollViewでスクロールを制御）
                 physics: const NeverScrollableScrollPhysics(),
-                crossAxisCount: 2,
+                // 横方向（クロス軸）のカラム数を指定（2列のグリッド）
+                crossAxisCount: 1,
+                // 横方向（クロス軸）のアイテム間のスペース（16px）
                 crossAxisSpacing: 16,
+                // 縦方向（メイン軸）のアイテム間のスペース（16px）
                 mainAxisSpacing: 16,
-                childAspectRatio: 0.75,
+                // 子アイテムのアスペクト比（幅÷高さ）。値が小さいほど高さが大きくなる（0.68 = 幅に対して高さが約1.47倍）
+                childAspectRatio: 1.5,
+                // グリッドに表示する子ウィジェットのリスト
                 children: const [
                   ArtworkCard(
-                    imageEmoji: '🎨',
-                    creatorName: '山田太郎',
-                    creatorAvatar: '👨🏻‍🎨',
-                    likeCount: 245,
-                    tags: ['デジタル', 'ファンタジー'],
-                  ),
-                  ArtworkCard(
-                    imageEmoji: '🎬',
-                    creatorName: '佐藤花子',
-                    creatorAvatar: '👩🏽',
-                    likeCount: 189,
-                    tags: ['アニメ', 'キャラクター'],
-                  ),
-                  ArtworkCard(
-                    imageEmoji: '🖼️',
-                    creatorName: '田中一郎',
-                    creatorAvatar: '👨🏻',
-                    likeCount: 312,
-                    tags: ['ナチュラル', 'ハーモニー'],
-                  ),
-                  ArtworkCard(
-                    imageEmoji: '🌸',
-                    creatorName: '山田太郎',
-                    creatorAvatar: '👨🏻‍🎨',
+                    imageUrl: 'https://picsum.photos/200/300',
                     likeCount: 567,
-                    tags: ['デザイン', 'ナチュラル'],
                   ),
                   ArtworkCard(
-                    imageEmoji: '🎭',
-                    creatorName: '佐藤花子',
-                    creatorAvatar: '👩🏽',
+                    imageUrl: 'https://picsum.photos/200/300',
+                    likeCount: 567,
+                  ),
+                  ArtworkCard(
+                    imageUrl: 'https://picsum.photos/200/300',
+                    likeCount: 567,
+                  ),
+                  ArtworkCard(
+                    imageUrl: 'https://picsum.photos/200/300',
+                    likeCount: 567,
+                  ),
+                  ArtworkCard(
+                    imageUrl: 'https://picsum.photos/200/300',
                     likeCount: 423,
-                    tags: ['アニメ', 'ドラマ'],
                   ),
                   ArtworkCard(
-                    imageEmoji: '🌈',
-                    creatorName: '田中一郎',
-                    creatorAvatar: '👨🏻',
+                    imageUrl: 'https://picsum.photos/200/300',
                     likeCount: 678,
-                    tags: ['デジタル', 'デザイン'],
                   ),
                 ],
               ),
             ],
           ),
         ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _selectedIndex,
-        onTap: _onItemTapped,
-        selectedItemColor: Colors.pink[400],
-        unselectedItemColor: Colors.grey,
-        showSelectedLabels: true,
-        showUnselectedLabels: true,
-        items: [
-          BottomNavigationBarItem(
-            icon: const Icon(Icons.home),
-            label: 'ホーム',
-          ),
-          BottomNavigationBarItem(
-            icon: Container(
-              padding: const EdgeInsets.all(12),
-              decoration: BoxDecoration(
-                color: Colors.pink[400],
-                shape: BoxShape.circle,
-              ),
-              child: const Icon(Icons.upload, color: Colors.white),
-            ),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: const Icon(Icons.person),
-            label: 'プロフィール',
-          ),
-        ],
       ),
     );
   }
