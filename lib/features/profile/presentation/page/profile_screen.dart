@@ -36,7 +36,7 @@ class ProfileScreen extends StatelessWidget {
               // プロフィールヘッダー
               Row(
                 children: [
-                  // TODO(profile): アイコンが設定されていない場合は分岐処理で表示する
+                  /// TODO:アイコンが設定されていない場合は分岐処理で表示する
                   /// 今の実装は初期アイコン
                   // アバター
                   CircleAvatar(
@@ -63,7 +63,7 @@ class ProfileScreen extends StatelessWidget {
                         ),
                         const SizedBox(height: 8),
                         Row(
-                          // TODO(api): APIから受け取って表示する
+                          // TODO: APIから受け取って表示する
                           children: [
                             _buildStatItem('作品', '12'),
                             const SizedBox(width: 24),
@@ -163,8 +163,9 @@ class ProfileScreen extends StatelessWidget {
                 crossAxisCount: 3,
                 crossAxisSpacing: 8,
                 mainAxisSpacing: 8,
+                childAspectRatio: 1.0,
                 children: List.generate(12, (index) {
-                  return DecoratedBox(
+                  return Container(
                     decoration: BoxDecoration(
                       color: Colors.grey[200],
                       borderRadius: BorderRadius.circular(8),
