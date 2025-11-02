@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 
 /// アートワークカードウィジェット
 class ArtworkCard extends StatelessWidget {
-  final String imageUrl; // 画像のURL
-  final int likeCount; // いいね数
-
   const ArtworkCard({
     super.key,
     required this.imageUrl,
     required this.likeCount,
   });
+
+  final String imageUrl; // 画像のURL
+  final int likeCount; // いいね数
 
   @override
   Widget build(BuildContext context) {
@@ -32,15 +32,15 @@ class ArtworkCard extends StatelessWidget {
               ),
             ),
             child: Image.network(
-                imageUrl,
-                width: 300,
-                height: 400,
-                fit: BoxFit.cover,
-              ),
+              imageUrl,
+              width: 300,
+              height: 400,
+              fit: BoxFit.cover,
             ),
-          
+          ),
+
           Padding(
-            padding: const EdgeInsets.all(12.0),
+            padding: const EdgeInsets.all(12),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

@@ -40,7 +40,7 @@ class HomeScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -61,7 +61,7 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 24),
-              
+
               // 作品グリッド
               GridView.count(
                 // 親ウィジェットのサイズに合わせてサイズを調整（SingleChildScrollView内で使用する際に必要）
@@ -111,4 +111,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-
