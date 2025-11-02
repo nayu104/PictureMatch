@@ -29,15 +29,15 @@ class ProfileScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // プロフィールヘッダー
               Row(
                 children: [
-                  /// TODO:アイコンが設定されていない場合は分岐処理で表示する
-                  /// 今の実装は初期アイコン 
+                  // TODO(profile): アイコンが設定されていない場合は分岐処理で表示する
+                  /// 今の実装は初期アイコン
                   // アバター
                   CircleAvatar(
                     radius: 50,
@@ -63,7 +63,7 @@ class ProfileScreen extends StatelessWidget {
                         ),
                         const SizedBox(height: 8),
                         Row(
-                          // TODO: APIから受け取って表示する
+                          // TODO(api): APIから受け取って表示する
                           children: [
                             _buildStatItem('作品', '12'),
                             const SizedBox(width: 24),
@@ -78,7 +78,7 @@ class ProfileScreen extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 24),
-              
+
               // アクションボタン
               Row(
                 children: [
@@ -101,7 +101,7 @@ class ProfileScreen extends StatelessWidget {
                     child: OutlinedButton(
                       onPressed: () {},
                       style: OutlinedButton.styleFrom(
-                       padding: const EdgeInsets.symmetric(vertical: 10),
+                        padding: const EdgeInsets.symmetric(vertical: 10),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
                         ),
@@ -112,7 +112,7 @@ class ProfileScreen extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 32),
-              
+
               // 自己紹介
               Text(
                 '自己紹介',
@@ -130,7 +130,7 @@ class ProfileScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 32),
-              
+
               // 作品セクション
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -155,7 +155,7 @@ class ProfileScreen extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 16),
-              
+
               // 作品グリッド
               GridView.count(
                 shrinkWrap: true,
@@ -163,9 +163,8 @@ class ProfileScreen extends StatelessWidget {
                 crossAxisCount: 3,
                 crossAxisSpacing: 8,
                 mainAxisSpacing: 8,
-                childAspectRatio: 1.0,
                 children: List.generate(12, (index) {
-                  return Container(
+                  return DecoratedBox(
                     decoration: BoxDecoration(
                       color: Colors.grey[200],
                       borderRadius: BorderRadius.circular(8),
@@ -187,8 +186,7 @@ class ProfileScreen extends StatelessWidget {
     );
   }
 
-
-/// 統計情報アイテム あとで初回描画時にこれを呼び出すようにする
+  /// 統計情報アイテム あとで初回描画時にこれを呼び出すようにする
   Widget _buildStatItem(String label, String value) {
     return Column(
       children: [

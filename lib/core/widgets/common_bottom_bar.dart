@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 
 /// 共通のボトムナビゲーションバー
 class CommonBottomBar extends StatelessWidget {
-  final int currentIndex;
-  final Function(int) onTap;
-
   const CommonBottomBar({
     super.key,
     required this.currentIndex,
     required this.onTap,
   });
+
+  final int currentIndex;
+  final void Function(int) onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -21,8 +21,8 @@ class CommonBottomBar extends StatelessWidget {
       showSelectedLabels: true,
       showUnselectedLabels: true,
       items: [
-        BottomNavigationBarItem(
-          icon: const Icon(Icons.home),
+        const BottomNavigationBarItem(
+          icon: Icon(Icons.home),
           label: 'ホーム',
         ),
         BottomNavigationBarItem(
@@ -36,8 +36,8 @@ class CommonBottomBar extends StatelessWidget {
           ),
           label: '',
         ),
-        BottomNavigationBarItem(
-          icon: const Icon(Icons.person),
+        const BottomNavigationBarItem(
+          icon: Icon(Icons.person),
           label: 'プロフィール',
         ),
       ],
