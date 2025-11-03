@@ -13,19 +13,14 @@ class ImageUploadScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         elevation: 0,
         title: Text(
-          'プロフィール',
+          '画像アップロード',
           style: GoogleFonts.notoSans(
             fontSize: 20,
             fontWeight: FontWeight.bold,
             color: Colors.black,
           ),
         ),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.settings, color: Colors.black),
-            onPressed: () {},
-          ),
-        ],
+       
       ),
       body: Center(child: const Text("画像アップロード画面")),
     );
