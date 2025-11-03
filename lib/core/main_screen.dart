@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pm/features/home/presentation/page/home_screen.dart';
 import 'package:pm/features/profile/presentation/page/profile_screen.dart';
 import '../core/widgets/common_bottom_bar.dart';
+import 'package:pm/features/image_upload/presentation/page/image_upload_screen.dart';
 
 /// メイン画面（タブナビゲーションを管理）
 class MainScreen extends StatefulWidget {
@@ -41,6 +42,34 @@ class _MainScreenState extends State<MainScreen> {
       bottomNavigationBar: CommonBottomBar(
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
+      ),
+      floatingActionButton: Container(
+        width: 56,
+        height: 56,
+        decoration: BoxDecoration(
+          gradient: const LinearGradient(
+            colors: [Color.fromARGB(255, 234, 37, 37), Color.fromARGB(255, 244, 145, 253)],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+          shape: BoxShape.circle,
+          boxShadow: [
+            BoxShadow(
+              color: const Color(0xFF1DA1F2).withOpacity(0.3),
+              blurRadius: 8,
+              offset: const Offset(0, 4),
+            ),
+          ],
+        ),
+        child: IconButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const ImageUploadScreen()),
+            );
+          }, 
+          icon: const Icon(Icons.add, color: Colors.white),
+          ),
       ),
     );
   }
