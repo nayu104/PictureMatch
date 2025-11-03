@@ -6,5 +6,5 @@ Supabase(未定）
 fast api(未定）
 
 
-# マージについて
+### マージについて
 - 一週間周期でmain ← developとマージする
