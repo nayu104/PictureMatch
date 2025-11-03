@@ -55,7 +55,7 @@ class _MainScreenState extends State<MainScreen> {
           shape: BoxShape.circle,
           boxShadow: [
             BoxShadow(
-              color: const Color(0xFF1DA1F2).withOpacity(0.3),
+              color: const Color(0xFF1DA1F2).withValues(alpha: 0.3),
               blurRadius: 8,
               offset: const Offset(0, 4),
             ),
@@ -65,7 +65,7 @@ class _MainScreenState extends State<MainScreen> {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const ImageUploadScreen()),
+              MaterialPageRoute<void>(builder: (context) => const ImageUploadScreen()),
             );
           }, 
           icon: const Icon(Icons.add, color: Colors.white),
