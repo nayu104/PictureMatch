@@ -4,3 +4,7 @@ https://zenn.dev/solt0204/articles/d88a633e74de0a
 Flutter 
 Supabase(未定）
 fast api(未定）
+
+
+# マージについて
+- 一週間周期でmain ← developとマージする
