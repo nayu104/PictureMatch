@@ -8,3 +8,6 @@ https://zenn.dev/solt0204/articles/d88a633e74de0a
 
 ### マージについて
 - 一週間周期でmain ← developとマージする
+
+### 実行方法
+- flutter run
