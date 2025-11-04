@@ -35,6 +35,21 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+         backgroundColor: Colors.white,
+       leading: Padding(
+      padding: const EdgeInsets.all(8),
+      child: CircleAvatar(
+        radius: 20,
+        backgroundColor: Colors.grey[300],
+        child: const Icon(
+          Icons.person,
+          size: 30,
+          color: Colors.grey,
+        ),
+      ),
+    ),
+      ),
       body: IndexedStack(
         index: _selectedIndex,
         children: _screens,
