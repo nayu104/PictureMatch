@@ -39,14 +39,7 @@ class HomeScreen extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              const SizedBox(height: 8),
-              Text(
-                'クリエイターたちの素晴らしい作品をチェックしましょう',
-                style: GoogleFonts.notoSans(
-                  fontSize: 14,
-                  color: Colors.grey[600],
-                ),
-              ),
+
               const SizedBox(height: 24),
 
               // 作品グリッド
@@ -56,7 +49,7 @@ class HomeScreen extends StatelessWidget {
                 // スクロールを無効化（親のSingleChildScrollViewでスクロールを制御）
                 physics: const NeverScrollableScrollPhysics(),
                 // 横方向（クロス軸）のカラム数を指定（2列のグリッド）
-                crossAxisCount: 1,
+                crossAxisCount: 3,
                 // 横方向（クロス軸）のアイテム間のスペース（16px）
                 crossAxisSpacing: 16,
                 // 縦方向（メイン軸）のアイテム間のスペース（16px）
