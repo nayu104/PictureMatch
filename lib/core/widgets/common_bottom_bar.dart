@@ -28,17 +28,21 @@ class CommonBottomBar extends StatelessWidget {
         BottomNavigationBarItem(
           icon: Container(
             padding: const EdgeInsets.all(12),
-            decoration: BoxDecoration(
-              color: Colors.pink[400],
+            decoration: const BoxDecoration(
+              gradient:  LinearGradient(
+                colors: [Color.fromARGB(255, 234, 37, 37), Color.fromARGB(255, 244, 145, 253)],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
               shape: BoxShape.circle,
             ),
-            child: const Icon(Icons.upload, color: Colors.white),
+            child: const Icon(Icons.photo_library, color: Colors.white),
           ),
-          label: '',
+          label: '出会う',
         ),
         const BottomNavigationBarItem(
-          icon: Icon(Icons.person),
-          label: 'プロフィール',
+          icon: Icon(Icons.favorite),
+          label: 'いいね',
         ),
       ],
     );

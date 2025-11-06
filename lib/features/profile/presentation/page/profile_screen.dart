@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pm/features/setting/presentation/page/setting_screen.dart';
 
 /// プロフィール画面
 class ProfileScreen extends StatelessWidget {
@@ -23,7 +24,14 @@ class ProfileScreen extends StatelessWidget {
         actions: [
           IconButton(
             icon: const Icon(Icons.settings, color: Colors.black),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute<void>(
+                  builder: (context) => const SettingScreen(),
+                ),
+              );
+            },
           ),
         ],
       ),

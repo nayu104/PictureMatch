@@ -12,28 +12,15 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
+
         elevation: 0,
-        title: Row(
-          children: [
-            const Text('🎨', style: TextStyle(fontSize: 28)),
-            const SizedBox(width: 8),
-            Text(
-              'イラストマッチング',
-              style: GoogleFonts.notoSans(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-              ),
-            ),
-          ],
-        ),
         actions: [
           IconButton(
-            icon: const Icon(Icons.favorite_border, color: Colors.black),
+            icon: const Icon(Icons.notifications_outlined, color: Colors.black),
             onPressed: () {},
           ),
           IconButton(
-            icon: const Icon(Icons.search, color: Colors.black),
+            icon: const Icon(Icons.favorite_border, color: Colors.black),
             onPressed: () {},
           ),
         ],
@@ -52,14 +39,7 @@ class HomeScreen extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              const SizedBox(height: 8),
-              Text(
-                'クリエイターたちの素晴らしい作品をチェックしましょう',
-                style: GoogleFonts.notoSans(
-                  fontSize: 14,
-                  color: Colors.grey[600],
-                ),
-              ),
+
               const SizedBox(height: 24),
 
               // 作品グリッド
@@ -69,7 +49,7 @@ class HomeScreen extends StatelessWidget {
                 // スクロールを無効化（親のSingleChildScrollViewでスクロールを制御）
                 physics: const NeverScrollableScrollPhysics(),
                 // 横方向（クロス軸）のカラム数を指定（2列のグリッド）
-                crossAxisCount: 1,
+                crossAxisCount: 3,
                 // 横方向（クロス軸）のアイテム間のスペース（16px）
                 crossAxisSpacing: 16,
                 // 縦方向（メイン軸）のアイテム間のスペース（16px）

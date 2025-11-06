@@ -25,7 +25,7 @@ class _MainScreenState extends State<MainScreen> {
     ),
     const ProfileScreen(),
   ];
-
+  // TODO: リバーポットの処理に置き換える
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
@@ -43,19 +43,24 @@ class _MainScreenState extends State<MainScreen> {
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
       ),
+
+      // 画像アップロードボタン
       floatingActionButton: Container(
         width: 56,
         height: 56,
         decoration: BoxDecoration(
           gradient: const LinearGradient(
-            colors: [Color.fromARGB(255, 234, 37, 37), Color.fromARGB(255, 244, 145, 253)],
+            colors: [
+              Color.fromARGB(255, 234, 37, 37),
+              Color.fromARGB(255, 244, 145, 253),
+            ],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
           shape: BoxShape.circle,
           boxShadow: [
             BoxShadow(
-              color: const Color(0xFF1DA1F2).withOpacity(0.3),
+              color: Color.fromARGB(255, 244, 145, 253).withValues(alpha: 0.3),
               blurRadius: 8,
               offset: const Offset(0, 4),
             ),
@@ -63,13 +68,18 @@ class _MainScreenState extends State<MainScreen> {
         ),
         child: IconButton(
           onPressed: () {
+            // TODO: 画像アップロード機能を実装
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const ImageUploadScreen()),
+              MaterialPageRoute<void>(
+                builder: (context) => const ImageUploadScreen(),
+              ),
             );
-          }, 
-          icon: const Icon(Icons.add, color: Colors.white),
+          },
+          icon: const Icon(
+            Icons.add,
           ),
+        ),
       ),
     );
   }
