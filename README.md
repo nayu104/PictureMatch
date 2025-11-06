@@ -1,8 +1,8 @@
 
 ### ▶︎技術スタック（予定）
 - Flutter 
-- Supabase(未定）
-- fast api(未定）
+- Supabase(予定)
+- fast api(予定)
 
 ### ▶︎ディレクトリ構造について
 Feature firstとScreen firstのハイブリットを採用
