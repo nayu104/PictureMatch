@@ -1,6 +1,6 @@
 
 ### ▶︎技術スタック（予定）
-- Flutter （状態管理未定/おそらくRiverPod)
+- Flutter （状態管理未定/おそらくRiverpod)
 - Supabase(予定)
 - fast api(予定)
 
