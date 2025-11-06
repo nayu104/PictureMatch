@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../widgets/artwork_card.dart';
+import 'package:pm/core/widgets/common_profile_button.dart';
 
 /// ホーム画面
 class HomeScreen extends StatelessWidget {
@@ -12,21 +13,9 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
+        leading: const ProfileIconButton(),
+
         elevation: 0,
-        title: Row(
-          children: [
-            const Text('🎨', style: TextStyle(fontSize: 28)),
-            const SizedBox(width: 8),
-            Text(
-              'イラストマッチング',
-              style: GoogleFonts.notoSans(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-              ),
-            ),
-          ],
-        ),
         actions: [
           IconButton(
             icon: const Icon(Icons.notifications_outlined, color: Colors.black),
