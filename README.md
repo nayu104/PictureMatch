@@ -8,7 +8,7 @@
 Feature firstとScreen firstのハイブリットを採用
 
 ### ▶︎マージについて
-- 一週間周期でmain ← developとマージする
+- 気分でmain ← developとマージする
 
 ### ▶︎実行方法
 - flutter run
