@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../widgets/artwork_card.dart';
-import 'package:pm/core/widgets/common_profile_button.dart';
 
 /// ホーム画面
 class HomeScreen extends StatelessWidget {
@@ -13,7 +12,6 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
-        leading: const ProfileIconButton(),
 
         elevation: 0,
         actions: [
