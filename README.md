@@ -10,3 +10,4 @@ Feature firstとScreen firstのハイブリットを採用
 - 気分でmain ← developとマージする
 
 ### ▶︎実行方法
+- flutter run
