@@ -1,4 +1,3 @@
-
 ### ▶︎技術スタック（予定）
 - Flutter （状態管理未定/おそらくRiverpod)
 - Supabase(予定)
@@ -11,4 +10,3 @@ Feature firstとScreen firstのハイブリットを採用
 - 気分でmain ← developとマージする
 
 ### ▶︎実行方法
-- flutter run
